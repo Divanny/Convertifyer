@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.filepond--panel-root {
+  background-color: transparent !important;
+  border: 2px solid #2c3340 !important;
+}
+
+.filepond--drop-label {
+  color: #c7ccd8 !important;
+}
+
+.filepond--item-panel {
+  background-color: #767b8b !important;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
