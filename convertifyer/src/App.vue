@@ -160,7 +160,7 @@ const navigation = [
   { name: "URL to PDF", href: "/URLtoPDF" },
   { name: "Image to PDF", href: "/IMGtoPDF" },
   { name: "HTML a PDF", href: "/HTMLtoPDF" },
-  { name: "Make a PDF Searchable", href: "/" },
+  { name: "Make a PDF Searchable", href: "/MakePDFSearchable" },
 ];
 
 const mobileMenuOpen = ref(false);

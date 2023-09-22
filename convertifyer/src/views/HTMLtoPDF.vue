@@ -9,7 +9,7 @@
       </p>
       <div class="mt-10 sm:px-0 sm:mx-0 md:px-10 md:mx-10 lg:px-8 lg:mx-10">
         <file-pond v-bind:files="file" ref="filePond" credits="false" accepted-file-types="text/html" labelIdle='Drag & Drop your HTML file or <span class="filepond--label-action"> Browse </span>'/>
-        <button @click="convert()" v-disabled="file < 1" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Convert</button>
+        <button @click="convert()" :disabled="disabledButton" :class="{ 'opacity-25 cursor-not-allowed': disabledButton }" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Convert</button>
       </div>
     </div>
   </div>
@@ -27,6 +27,7 @@ export default {
   data: function() {
     return {
       file: [],
+      disabledButton: false,
       config: {
         headers: {
           'X-RapidAPI-Key': process.env.VUE_APP_RAPID_API_KEY
@@ -36,7 +37,14 @@ export default {
   },
   methods: {
     convert() {
+      if (!this.$refs.filePond.getFile()) {
+        this.push.warning('Please specify the HTML file');
+        return;
+      }
+
       const notification = this.push.promise("We're converting your HTML...")
+      this.disabledButton = true;
+
       const vueInstance = this;      
       const reader = new FileReader();
       
@@ -49,6 +57,7 @@ export default {
             responseType: 'blob',
           });
           notification.resolve('HTML converted successfully');
+          this.disabledButton = false;
 
           const blob = new Blob([response.data], {type: 'application/pdf'});
           const link = document.createElement('a');
@@ -59,6 +68,7 @@ export default {
         }
         catch (ex) {
           notification.reject('There was an error converting the HTML. Please try again.')
+          this.disabledButton = false;
         }
       };
 
