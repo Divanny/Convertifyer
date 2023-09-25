@@ -158,7 +158,7 @@ import { Notivue, Notifications, NotivueSwipe, darkTheme } from 'notivue'
 
 const navigation = [
   { name: "URL to PDF", href: "/URLtoPDF" },
-  { name: "Image to PDF", href: "/IMGtoPDF" },
+  { name: "File to PDF", href: "/FiletoPDF" },
   { name: "HTML a PDF", href: "/HTMLtoPDF" },
   { name: "Make a PDF Searchable", href: "/MakePDFSearchable" },
 ];

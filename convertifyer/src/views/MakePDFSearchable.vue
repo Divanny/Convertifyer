@@ -8,7 +8,7 @@
         Make your PDFs searchable and editable with OCR: the easy way to extract text from scanned documents
       </p>
       <div class="mt-10 sm:px-0 sm:mx-0 md:px-10 md:mx-10 lg:px-8 lg:mx-10">
-        <file-pond v-bind:files="file" ref="filePond" credits="false" accepted-file-types="application/pdf" labelIdle='Drag & Drop your PDF file or <span class="filepond--label-action"> Browse </span>'/>
+        <file-pond v-bind:files="file" ref="filePond" credits="false" dropOnPage="true" dropOnElement="false" fileValidateTypeLabelExpectedTypes="Expects PDF format" accepted-file-types="application/pdf" labelIdle='Drag & Drop your PDF file or <span class="filepond--label-action"> Browse </span>'/>
           <button @click="convert()" :disabled="disabledButton" :class="{ 'opacity-25 cursor-not-allowed': disabledButton }" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Convert</button>
         </div>
     </div>

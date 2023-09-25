@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import URLtoPDF from './views/URLtoPDF.vue'
-import IMGtoPDF from './views/IMGtoPDF.vue'
+import FILEtoPDF from './views/FILEtoPDF.vue'
 import HTMLtoPDF from './views/HTMLtoPDF.vue'
 import MakePDFSearchable from './views/MakePDFSearchable.vue'
 
@@ -17,9 +17,9 @@ const routes = [
     component: URLtoPDF
   },
   {
-    path: '/IMGtoPDF',
-    name: 'IMGtoPDF',
-    component: IMGtoPDF
+    path: '/FiletoPDF',
+    name: 'FiletoPDF',
+    component: FILEtoPDF
   },
   {
     path: '/HTMLtoPDF',
