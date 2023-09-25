@@ -7,11 +7,19 @@ body {
   width: 100%;
 }
 
+.filepond--drip {
+  background-color: #767b8be8 !important;
+}
+
 .filepond--panel-root {
   background-color: transparent !important;
   border: 2px solid #2c3340 !important;
 }
 
+.filepond--file-action-button:hover,
+.filepond--file-action-button:focus {
+    box-shadow: 0 0 0 0.125em red;
+}
 .filepond--drop-label {
   color: #c7ccd8 !important;
 }
