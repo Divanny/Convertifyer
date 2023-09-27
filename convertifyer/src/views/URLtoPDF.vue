@@ -1,20 +1,18 @@
 <template>
-  <div class="mx-auto flex justify-center	content-center max-w-2xl h-full flex-wrap">
-    <div class="text-center h-fit">
+  <div class="mx-auto flex justify-center	content-center max-w-2xl h-full flex-wrap text-center">
       <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
         URL to PDF
       </h1>
-      <p class="mt-6 text-lg leading-8 text-gray-300">
-        Turn your favorite websites into PDFs with <b>Convertifyer</b>, <br/> the free and easy-to-use URL to PDF converter
+      <p class="mt-6 text-lg leading-8 text-gray-300 whitespace-normal px-0 sm:px-16">
+        Turn your favorite websites into PDFs with <b>Convertifyer</b>, the free and easy-to-use URL to PDF converter
       </p>
-      <div class="flex w-100 mt-10 sm:mx-0 md:mx-10 lg:mx-12 justify-between">
-        <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 w-full focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+      <div class="flex flex-wrap w-100 mt-10 sm:mx-1 md:mx-10 lg:mx-12 w-full p-0 sm:px-16 justify-between">
+        <div class="flex rounded-md shadow-sm ring-1 ring-inset w-full sm:w-4/5 ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
           <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm">https://</span>
           <input type="text" v-model="url" @change="deleteHTTPS()" @keyup.enter="convert()" name="url" id="url" autocomplete="url" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-100 placeholder:text-gray-600 focus:ring-0 sm:text-sm sm:leading-6" placeholder="www.google.com">
         </div>
-        <button @click="convert()" :disabled="disabledButton" :class="{ 'opacity-25 cursor-not-allowed': disabledButton }" class="rounded-md bg-indigo-600 ml-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Convert</button>
+        <button @click="convert()" :disabled="disabledButton" :class="{ 'opacity-25 cursor-not-allowed': disabledButton }" class="rounded-md bg-indigo-600 my-3 sm:my-0 w-full sm:w-auto ml-0 sm:ml-2 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Convert</button>
       </div>
-    </div>
   </div>
 </template>
 
