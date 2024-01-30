@@ -28,7 +28,7 @@
 ### :dart: Features
 - Simple and friendly user interface
 - Support for various input and output formats
-- Option to make the PDF searchable with OCR (coming soon)
+- Option to make the PDF searchable with OCR
 
 
 ### :art: Color Reference
@@ -77,7 +77,7 @@ npm run build
 * [x] Convert HTML to PDF
 * [x] Convert URL to PDF
 * [x] Convert image to PDF
-* [ ] Searchable PDF
+* [x] Searchable PDF
 
 
 ## :wave: Contributing
